@@ -25,35 +25,36 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
 <style>
-    /* OVERRIDE: Change Intro Background to Aggie Maroon */
+    /* 1. Force the main background to Maroon */
     .s-intro {
         background-color: #500000 !important;
     }
-    
-    /* Optional: Change the color of the "overlay" if you are using a photo */
+
+    /* 2. The "Tint" Trick: Put Maroon ON TOP of the image */
     .s-intro__bg {
-        background-color: #500000 !important;
-        opacity: 0.5;
+        /* This creates a maroon filter over your cover.jpg */
+        background-image: linear-gradient(rgba(80, 0, 0, 0.7), rgba(80, 0, 0, 0.7)), url('images/cover.jpg') !important;
         
-        /* NEW LINES: */
-        background-size: cover !important; /* Keep filling the screen */
-        background-position: center top !important; /* Focus on the top center */
+        /* Ensure the image covers the screen */
+        background-size: cover !important;
+        background-position: center center !important;
+        
+        /* Make sure it's fully visible so the tint works */
+        opacity: 1.0 !important; 
     }
 
-    /* Optional: Change buttons to Maroon */
+    /* 3. Make buttons Maroon */
     .btn--primary, button.btn--primary {
         background-color: #500000 !important;
         border-color: #500000 !important;
+    }
 
-        /* Change the highlight color (links and span tags) to White/Silver */
+    /* 4. Fix Text Colors (White/Silver instead of Green) */
     a, span, .text-pretitle {
-        color: #ffffff; /* Or use #E0E0E0 for silver */
+        color: #e0e0e0; 
     }
-    
-    /* Keep the hover color visible (make it light gray) */
     a:hover {
-        color: #d6d6d6;
-    }
+        color: #ffffff;
     }
 </style>
 </head>
