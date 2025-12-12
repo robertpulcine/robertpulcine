@@ -33,7 +33,8 @@
     /* 2. The "Tint" Trick: Put Maroon ON TOP of the image */
     .s-intro__bg {
         /* This creates a maroon filter over your cover.jpg */
-        background-image: linear-gradient(rgba(80, 0, 0, 0.7), rgba(80, 0, 0, 0.7)), url('images/cover.jpg') !important;
+        /* If bgpic.jpeg is in the same folder as index.html */
+    background-image: linear-gradient(rgba(80, 0, 0, 0.7), rgba(80, 0, 0, 0.7)), url('bgpic.jpeg') !important;
         
         /* Ensure the image covers the screen */
         background-size: cover !important;
