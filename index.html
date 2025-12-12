@@ -24,7 +24,24 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
+<style>
+    /* OVERRIDE: Change Intro Background to Aggie Maroon */
+    .s-intro {
+        background-color: #500000 !important;
+    }
+    
+    /* Optional: Change the color of the "overlay" if you are using a photo */
+    .s-intro__bg {
+        background-color: #500000 !important;
+        opacity: 0.5; /* This lets the maroon tint your photo */
+    }
 
+    /* Optional: Change buttons to Maroon */
+    .btn--primary, button.btn--primary {
+        background-color: #500000 !important;
+        border-color: #500000 !important;
+    }
+</style>
 </head>
 
 
@@ -114,7 +131,7 @@
                         <h3 class="animate-on-load">Electrical Engineering Student @ Texas A&M</h3>
                     </div>
 
-                    <div class="s-intro__bg" style="background-image: url('mainpic.jpeg'); opacity: 0.4;"></div>
+                    <div class="s-intro__bg" style="background-image: url('bgpic.jpeg'); opacity: 0.4;"></div>
 
                 </div>
             </div>
