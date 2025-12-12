@@ -36,16 +36,32 @@
 }
 
 /* Background layer fills the whole intro */
+/* Full-bleed background layer (prevents the “gray bar” shrink) */
 .s-intro__bg {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    z-index: 0;
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+
+    /* override template constraints */
+    max-width: none !important;
+    margin: 0 !important;
 
     background-image: linear-gradient(rgba(80, 0, 0, 0.7), rgba(80, 0, 0, 0.7)), url('bgpic.jpeg') !important;
     background-size: cover !important;
     background-position: center center !important;
-    opacity: 1 !important;
+    background-repeat: no-repeat !important;
+
+    z-index: 0 !important;
 }
+
+/* keep content above the background */
+.s-intro__content,
+.s-intro__text {
+    position: relative !important;
+    z-index: 1 !important;
+}
+
 
 /* Keep text above background */
 .s-intro__text {
@@ -57,18 +73,7 @@
 
     /* 2. The "Tint" Trick: Put Maroon ON TOP of the image */
     /* 2. The "Tint" Trick: Put Maroon ON TOP of the image */
-    .s-intro__bg {
-        /* WE UPDATED THIS LINE TO MATCH YOUR FILE NAME */
-        background-image: linear-gradient(rgba(80, 0, 0, 0.7), rgba(80, 0, 0, 0.7)), url('bgpic.jpeg') !important;
-        
-        /* Ensure the image covers the screen */
-        background-size: cover !important;
-        background-position: center center !important;
-        
-        /* Make sure it's fully visible so the tint works */
-        opacity: 1 !important; /* or just delete the opacity line entirely */
-
-    }
+    
 
     /* 3. Make buttons Maroon */
     .btn--primary, button.btn--primary {
@@ -163,10 +168,12 @@
         ================================================== -->
         <section id="intro" class="s-intro">
 
+    <!-- background layer (full-bleed) -->
     <div class="s-intro__bg"></div>
 
     <div class="row">
         <div class="column lg-12 s-intro__content">
+
 
             <div class="s-intro__text">
                 <h1 class="s-intro__text-huge animate-on-load" style="font-size: 100px;">
