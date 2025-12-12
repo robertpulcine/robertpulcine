@@ -33,13 +33,27 @@
     /* Optional: Change the color of the "overlay" if you are using a photo */
     .s-intro__bg {
         background-color: #500000 !important;
-        opacity: 0.5; /* This lets the maroon tint your photo */
+        opacity: 0.5;
+        
+        /* NEW LINES: */
+        background-size: cover !important; /* Keep filling the screen */
+        background-position: center top !important; /* Focus on the top center */
     }
 
     /* Optional: Change buttons to Maroon */
     .btn--primary, button.btn--primary {
         background-color: #500000 !important;
         border-color: #500000 !important;
+
+        /* Change the highlight color (links and span tags) to White/Silver */
+    a, span, .text-pretitle {
+        color: #ffffff; /* Or use #E0E0E0 for silver */
+    }
+    
+    /* Keep the hover color visible (make it light gray) */
+    a:hover {
+        color: #d6d6d6;
+    }
     }
 </style>
 </head>
