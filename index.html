@@ -22,7 +22,7 @@
 <style>
     /* --- 1. EMERGENCY FIXES --- */
     
-    /* FORCE HIDE PRELOADER (This was likely blocking your view) */
+    /* Hide Preloader */
     #preloader {
         display: none !important;
         opacity: 0 !important;
@@ -30,26 +30,30 @@
         z-index: -999 !important;
     }
 
-    /* ALLOW PAGE TO GROW (Fixes content getting cut off) */
+    /* 2. INTRO LAYOUT (ANCHOR TO TOP) */
     section#intro.s-intro {
         position: relative;
-        height: auto !important; /* Allows height to grow with the image */
+        /* Allow height to grow naturally if content is huge */
+        height: auto !important; 
         min-height: 100vh !important;
+        
         background-color: #500000 !important;
-        overflow: visible !important; /* Let content show */
+        overflow: visible !important;
         
         display: flex !important; 
         flex-direction: column !important;
+        
+        /* CHANGED: Start from top instead of center to prevent cutting off name */
+        justify-content: flex-start !important; 
         align-items: center !important; 
-        justify-content: center !important;
         text-align: center !important;
         
-        /* Padding to prevent overlap with header/footer */
-        padding-top: 140px !important; 
-        padding-bottom: 100px !important;
+        /* CHANGED: Push content down 20% so it clears the top edge */
+        padding-top: 20vh !important; 
+        padding-bottom: 10rem !important;
     }
 
-    /* 2. BACKGROUND IMAGE (Kyle Field) */
+    /* 3. BACKGROUND IMAGE */
     section#intro .s-intro__bg {
         position: absolute !important;
         inset: 0 !important;
@@ -59,7 +63,6 @@
         z-index: 0 !important;
         background-color: #500000 !important; 
         
-        /* Image + Maroon Tint */
         background-image: 
             linear-gradient(rgba(80, 0, 0, 0.85), rgba(80, 0, 0, 0.85)), 
             url('kylefield.jpg') !important;
@@ -69,7 +72,7 @@
         background-size: cover !important;
     }
 
-    /* 3. KILL GRAY OVERLAY */
+    /* Kill Gray Overlay */
     .s-intro__bg::after {
         content: none !important;
         display: none !important;
@@ -80,6 +83,7 @@
         position: relative !important;
         z-index: 2 !important;
         width: 100%;
+        /* Reset margin so it doesn't pull up */
         margin-top: 0 !important; 
     }
 
@@ -99,14 +103,13 @@
         border-radius: 0 !important; 
         border: 4px solid #e0e0e0;
         
-        /* Center spacing */
-        margin: 40px auto 0 auto !important; 
+        margin: 3rem auto 0 auto !important; 
         
         display: block;
         box-shadow: 0 20px 40px rgba(0,0,0,0.5); 
     }
 
-    /* 6. TEXT COLORS */
+    /* 6. TEXT & HEADER COLORS */
     .s-intro h1, .s-intro h3, .text-pretitle, a, span {
         color: #e0e0e0 !important; 
     }
@@ -114,7 +117,6 @@
         color: #ffffff !important;
     }
     
-    /* 7. MAROON HEADER */
     .s-header, .s-header__block, .s-header__nav-wrap {
         background-color: #500000 !important; 
         border-bottom: 1px solid rgba(255,255,255,0.1) !important;
@@ -124,7 +126,6 @@
     .s-header__menu-toggle span { background-color: #e0e0e0 !important; }
     .s-header__menu-toggle span::before, .s-header__menu-toggle span::after { background-color: #e0e0e0 !important; }
     
-    /* 8. BUTTONS */
     .btn--primary, button.btn--primary {
         background-color: #500000 !important;
         border-color: #500000 !important;
@@ -189,7 +190,10 @@
                 </div>
             </div>
 
-        </section> <section id="about" class="s-about">
+        </section>
+
+
+        <section id="about" class="s-about">
 
             <div class="s-about__block s-about__intro">
                 <div class="row">
