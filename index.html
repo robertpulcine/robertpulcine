@@ -23,8 +23,7 @@
     /* 1. ORIGINAL TEMPLATE LAYOUT (CENTERED) */
     section#intro.s-intro {
         position: relative;
-        height: 100vh;
-        min-height: 100vh;
+        min-height: 100vh; /* Allows it to grow if image is very tall */
         background-color: #500000 !important;
         overflow: hidden;
         
@@ -33,7 +32,8 @@
         align-items: center !important; 
         justify-content: center !important;
         text-align: center !important;
-        padding-top: 0 !important;
+        padding-top: 8rem !important; /* Added padding so header doesn't cover name */
+        padding-bottom: 4rem !important;
     }
 
     /* 2. BACKGROUND IMAGE (Kyle Field + Maroon Tint) */
@@ -78,13 +78,13 @@
         margin: 0 auto; 
     }
 
-    /* 5. BIG RECTANGULAR PROFILE PICTURE */
+    /* 5. TALLER RECTANGULAR PROFILE PICTURE */
     .profile-pic {
-        /* Dimensions: Bigger & Rectangular */
-        width: 600px;
-        height: 400px;
-        max-width: 90vw; /* Ensures it fits on mobile screens */
+        /* Dimensions: Taller (Portrait Mode) */
+        width: 500px;
+        height: 650px; 
         
+        max-width: 90vw; /* Ensures it fits on mobile screens */
         object-fit: cover;
         
         border-radius: 0 !important; /* Sharp corners */
@@ -94,7 +94,7 @@
         margin: 2rem auto 0 auto !important; 
         
         display: block;
-        box-shadow: 0 20px 40px rgba(0,0,0,0.5); /* Stronger shadow for depth */
+        box-shadow: 0 20px 40px rgba(0,0,0,0.5); 
     }
 
     /* 6. TEXT COLORS */
