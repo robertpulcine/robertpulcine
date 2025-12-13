@@ -19,48 +19,6 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
 
-    <style>
-        /* 1. Force the main background to Maroon */
-        .s-intro {
-            background-color: #500000 !important;
-        }
-
-        /* 2. The "Tint" Trick: Put Maroon ON TOP of the image */
-        .s-intro__bg {
-            /* IMPORTANT: This assumes bgpic.jpeg is in the same folder as index.html */
-            background-image: linear-gradient(rgba(80, 0, 0, 0.7), rgba(80, 0, 0, 0.7)), url('bgpic.jpeg') !important;
-            
-            /* Ensure the image covers the screen */
-            background-size: cover !important;
-            background-position: center center !important;
-            
-            /* Make sure it's fully visible so the tint works */
-            opacity: 1.0 !important; 
-        }
-
-        /* 3. Make buttons Maroon */
-        .btn--primary, button.btn--primary {
-            background-color: #500000 !important;
-            border-color: #500000 !important;
-        }
-
-        /* 4. Fix Text Colors (White/Silver instead of Green) */
-        a, span, .text-pretitle {
-            color: #e0e0e0; 
-        }
-        
-        /* Keep hover visible */
-        a:hover {
-            color: #ffffff;
-        }
-
-        /* Fix the navigation dots/bullets to stand out */
-        .timeline__bullet {
-            background-color: #500000 !important;
-            border-color: #500000 !important;
-        }
-    </style>
-
 </head>
 
 
@@ -113,13 +71,13 @@
                 <div class="column lg-12 s-intro__content">
 
                     <div class="s-intro__text">
-                        <h1 class="s-intro__text-huge animate-on-load" style="font-size: 80px;">
+                        <h1 class="s-intro__text-huge animate-on-load">
                             Robert Pulcine
                         </h1>
                         <h3 class="animate-on-load">Electrical Engineering Student <span>@</span> Texas A&M</h3>
                     </div>
 
-                    <div class="s-intro__bg"></div>
+                    <div class="s-intro__bg" style="background-image: url('bgpic.jpeg'); opacity: 0.4;"></div>
 
                 </div>
             </div>
